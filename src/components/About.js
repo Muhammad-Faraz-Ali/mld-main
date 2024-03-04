@@ -40,9 +40,8 @@ const About = () => {
             data-aos-delay="500"
           >
             <h3 className="text-3xl  text-blue-900 font-bold">
-              We Develop High Quality Revenue-Driven Websites, Innovative Mobile
-              Apps, and Cutting-Edge Software. Elevate Your Business, Store,
-              Brand, and More
+              We develop high-quality revenue-driven websites, innovative mobile
+              apps, and cutting-edge softwares and more
             </h3>
             <div>
               <p className="my-3 text-xl text-gray-600 font-semibold">

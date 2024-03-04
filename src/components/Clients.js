@@ -16,6 +16,7 @@ import letsTokImg from "../assets/images/clients/letsTok.png";
 import paintArtImg from "../assets/images/clients/paintArt.png";
 import techBazzarImg from "../assets/images/clients/techBazzar.png";
 import usWeedImg from "../assets/images/clients/usWeed.png";
+import arbatGroupImg from "../assets/images/clients/arbatgroup.png";
 
 const clientImage = {
   height: "10rem",
@@ -85,46 +86,34 @@ const CLIENTS = [
     img: defiSportsImg,
     href: "https://defisports.com/",
   },
+  {
+    id: 13,
+    img: arbatGroupImg,
+    href: "https://arbat-group.com/",
+  },
 ];
 
-const arrowStyle = {
-  color: "blue", // Change the color to your desired color
-  fontSize: "44px", // Adjust the font size as needed
-};
+const CustomPrevArrow = (props) => (
+  <button {...props} className="slick-prev slick-arrow ">
+    Previous
+  </button>
+);
 
-const CustomPrevArrow = (props) => {
-  const { onClick } = props;
-  return (
-    <div style={{ ...arrowStyle, left: "-20px" }} onClick={onClick}>
-      {/* You can use an icon or any custom arrow content here */}
-      {"<"}
-    </div>
-  );
-};
-
-const CustomNextArrow = (props) => {
-  const { onClick } = props;
-  return (
-    <div style={{ ...arrowStyle, right: "-20px" }} onClick={onClick}>
-      {/* You can use an icon or any custom arrow content here */}
-      {">"}
-    </div>
-  );
-};
+const CustomNextArrow = (props) => (
+  <button {...props} className="slick-next slick-arrow bg-blue-900">
+    Next
+  </button>
+);
 
 const Clients = () => {
   const settings = {
     className: "center",
-    centerMode: true,
-    centerPadding: "60px",
-    dots: true,
+    // dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
-    prevArrow: <CustomPrevArrow />,
-    nextArrow: <CustomNextArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -154,9 +143,9 @@ const Clients = () => {
   };
 
   return (
-    <div className="mt-8">
+    <div className="mt-8 mb-6" id="clients">
       <section data-aos="fade-up">
-        <div className="mt-4 py-4">
+        <div className="mt-4">
           <h2 className="my-2 text-center text-3xl text-blue-900 uppercase font-bold">
             Clients & Partners
           </h2>
@@ -165,7 +154,11 @@ const Clients = () => {
           </div>
         </div>
 
-        <div className="p-16" data-aos="fade-in" data-aos-delay="600">
+        <div
+          className="p-16 mt-4 bg-gray-300"
+          data-aos="fade-in"
+          data-aos-delay="600"
+        >
           <Slider {...settings}>
             {CLIENTS.map((client) => (
               <div key={client?.id}>
