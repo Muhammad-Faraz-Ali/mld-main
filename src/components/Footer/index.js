@@ -1,17 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLinkedinIn,
-  faInstagram,
-  faFacebookSquare,
-} from "@fortawesome/free-brands-svg-icons";
 import {
   faPhone,
   faEnvelopeCircleCheck,
 } from "@fortawesome/free-solid-svg-icons";
-import MediaIcons from "./SocialMedia/MediaIcons";
+
+import MediaIcons from "../SocialMedia/MediaIcons";
+import ServicesLinks from "./ServicesLinks";
+import NavLinks from "./NavLinks";
+
 const Footer = () => {
   return (
     <footer>
@@ -46,100 +44,10 @@ const Footer = () => {
           </div>
 
           {/* 2nd block */}
-          <div className="col-span-6 md:col-span-6 lg:col-span-1 ml-7 mx-auto">
-            <h6 className="text-[#013289] text-xl font-bold mb-4">LINKS</h6>
-            <ul className="text-md">
-              <li className="mb-2">
-                <HashLink
-                  to="#home"
-                  className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                >
-                  Home
-                </HashLink>
-              </li>
-              <li className="mb-2">
-                <HashLink
-                  to="#about"
-                  className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                >
-                  About
-                </HashLink>
-              </li>
-              <li className="mb-2">
-                <HashLink
-                  to="#services"
-                  className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                >
-                  Services
-                </HashLink>
-              </li>
-              <li className="mb-2">
-                <HashLink
-                  to="#clients"
-                  className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                >
-                  Clients
-                </HashLink>
-              </li>
-              <li className="mb-2">
-                <HashLink
-                  to="/contact#contact"
-                  className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                >
-                  Contact
-                </HashLink>
-              </li>
-            </ul>
-          </div>
+          <NavLinks />
 
           {/* 3rd block */}
-          <div className="col-span-6 md:col-span-6 lg:col-span-4 mx-auto w-52">
-            <h6 className="text-[#013289] text-xl font-bold mb-4">
-              OUR SERVICES
-            </h6>
-            <ul className="text-md">
-              <li className="mb-2">
-                <Link
-                  to="#services"
-                  className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                >
-                  Web Development
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link
-                  to="#"
-                  className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                >
-                  Mobile App Development
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link
-                  to="#"
-                  className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                >
-                  DevOps/Cloud Computing
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link
-                  to="#"
-                  className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                >
-                  Marketing Services
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link
-                  to="#"
-                  className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                >
-                  Generative AI
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <ServicesLinks />
 
           {/* 4th block */}
           <div className="col-span-12 text-center mx-auto lg:col-span-3 font-bold uppercase text-blue-900">

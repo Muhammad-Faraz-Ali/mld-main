@@ -1,24 +1,25 @@
 import React from "react";
-import Clients from "../components/Clients";
-import Cta from "../components/Cta";
-import Footer from "../components/Footer";
-import Hero from "../components/Hero";
+
+import Home from "../components/Home";
 import About from "../components/About";
-import Portfolio from "../components/Portfolio";
+import Clients from "../components/Clients";
+import CallToAction from "../components/CallToAction";
+import Footer from "../components/Footer";
+// import Portfolio from "../components/Portfolio";
 import Services from "../components/Services";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
-      <Hero />
+      <Home />
       <About />
       <Services />
       {/* <Portfolio /> */}
       <Clients />
-      <Cta />
+      <CallToAction />
       <Footer />
     </>
   );
 };
 
-export default Home;
+export default HomePage;

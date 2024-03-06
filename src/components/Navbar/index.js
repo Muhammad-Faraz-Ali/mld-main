@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import NavLinks from "../Navbar/NavLinks";
 import { HashLink } from "react-router-hash-link";
+
+import NavLinks from "./NavLinks";
 
 const NavBar = () => {
   const [top, setTop] = useState(true);

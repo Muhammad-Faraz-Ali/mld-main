@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // All pages
-import Home from "./pages/Home";
+import HomePage from "./pages/Home";
 import Contact from "./pages/Contact";
 import DemoProduct from "./pages/DemoProduct";
 
@@ -29,17 +29,15 @@ function App() {
   useDocTitle("Tech Cats");
 
   return (
-    <>
-      <Router>
-        <ScrollToTop>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
-            {/* <Route path="/get-demo" element={<DemoProduct />} />  */}
-          </Routes>
-        </ScrollToTop>
-      </Router>
-    </>
+    <Router>
+      <ScrollToTop>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/contact" element={<Contact />} />
+          {/* <Route path="/get-demo" element={<DemoProduct />} />  */}
+        </Routes>
+      </ScrollToTop>
+    </Router>
   );
 }
 

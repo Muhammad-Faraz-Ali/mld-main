@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const Cta = () => {
+const CallToAction = () => {
   return (
     <div className="w-full flex items-center justify-center text-white cta">
       <div className="mx-8 w-full h-96 text-center lg:text-left py-16 px-12 flex lg:justify-between items-center">
@@ -41,4 +41,4 @@ const Cta = () => {
   );
 };
 
-export default Cta;
+export default CallToAction;

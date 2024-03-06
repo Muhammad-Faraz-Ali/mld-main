@@ -1,7 +1,4 @@
-import React from "react";
-import Card from "./About/Card";
-
-const DATA_ARRAY = [
+export const GOALS = [
   {
     title: "Our Mission",
     description:
@@ -18,23 +15,3 @@ const DATA_ARRAY = [
       "At Tvinz, we're committed to creating innovative software solutions that simplify complex tasks and enhance everyday experiences. Our team of experienced professionals is dedicated to delivering exceptional products and services that make a positive impact on society. Whether you're a business or an individual, we're here to help you achieve your goals and make a difference in the world. Thank you for choosing Tvinz.",
   },
 ];
-
-const AboutSection = () => {
-  return (
-    <div className="my-4 py-4" id="aboutSection">
-      <div className="px-4" data-aos="fade-down" data-aos-delay="600">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {DATA_ARRAY.map((data, index) => (
-            <Card
-              key={`index_${index}`}
-              title={data.title}
-              description={data.description}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default AboutSection;

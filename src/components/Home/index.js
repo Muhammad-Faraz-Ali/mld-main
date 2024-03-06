@@ -1,13 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import NavBar from "../components/Navbar/NavBar";
-import heroImg from "../assets/images/web-dev.svg";
-import home from "../assets/images/clients/home.jpeg";
-import ContactButton from "./Contact/ContactButton";
+import NavBar from "../Navbar";
+import homeImage from "../../assets/images/clients/homeImage.jpeg";
+import ContactButton from "../Contact/ContactButton";
 
-const Hero = () => {
+const Home = () => {
   return (
-    <div className="hero" id="home">
+    <div className="home" id="home">
       <div>
         <NavBar />
       </div>
@@ -26,14 +24,14 @@ const Hero = () => {
             data-aos-delay="200"
           >
             <h1 className="mb-5 md:text-5xl text-3xl font-bold text-blue-900">
-              Your Business is Presentation of Our Capabilities.
+              Your Business is Presentation of Our Capabilities!
             </h1>
-            <div className="text-xl font-semibold tracking-tight mb-5 text-gray-500">
+            <p className="text-xl font-semibold tracking-tight mb-5 text-gray-500">
               {/* We are a team of highly motivated and skilled developers
                 dedicated to delivering only the best software. */}
               Unlock the future with us! We're your one-stop destination for
               cutting-edge software solutions.
-            </div>
+            </p>
             <div className="mb-4 space-x-0 md:space-x-2 md:mb-8">
               <ContactButton btnText="Get Started" />
             </div>
@@ -46,7 +44,7 @@ const Hero = () => {
             <img
               alt="card img"
               className="rounded-full float-right duration-1000 w-full"
-              src={home}
+              src={homeImage}
             />
           </div>
         </div>
@@ -55,4 +53,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Home;

@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
+// import { HashLink } from "react-router-hash-link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedinIn,
   faInstagram,
   faFacebookSquare,
 } from "@fortawesome/free-brands-svg-icons";
-import {
-  faPhone,
-  faEnvelopeCircleCheck,
-} from "@fortawesome/free-solid-svg-icons";
+// import {
+//   faPhone,
+//   faEnvelopeCircleCheck,
+// } from "@fortawesome/free-solid-svg-icons";
 
 const MediaIcons = () => {
   return (
