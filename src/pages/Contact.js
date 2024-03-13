@@ -1,14 +1,20 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
+import { toast } from "react-toastify";
+import axios from "axios";
+import Notiflix from "notiflix";
+//import { SMTPClient } from "emailjs";
+import { useNavigate } from "react-router-dom";
+
 import NavBar from "../components/Navbar";
 import Footer from "../components/Footer";
 import useDocTitle from "../hooks/useDocTitle";
-import axios from "axios";
-// import emailjs from 'emailjs-com';
-import Notiflix from "notiflix";
 import MediaIcons from "../components/SocialMedia/MediaIcons";
 
-const Contact = () => {
+const Contact = ({ history }) => {
   useDocTitle("Tvins");
+  console.log("index his", history);
+  const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -28,52 +34,92 @@ const Contact = () => {
     setMessage("");
   };
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    document.getElementById("submitBtn").disabled = true;
-    document.getElementById("submitBtn").innerHTML = "Loading...";
-    let fData = new FormData();
-    fData.append("first_name", firstName);
-    fData.append("last_name", lastName);
-    fData.append("email", email);
-    fData.append("phone_number", phone);
-    fData.append("message", message);
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+  //   document.getElementById("submitBtn").disabled = true;
+  //   document.getElementById("submitBtn").innerHTML = "Loading...";
+  //   let fData = new FormData();
+  //   fData.append("first_name", firstName);
+  //   fData.append("last_name", lastName);
+  //   fData.append("email", email);
+  //   fData.append("phone_number", phone);
+  //   fData.append("message", message);
 
-    // Notiflix.Report.success("Success", "Done", "Okay");
-    Notiflix.Report.failure("An error occurred", "Error", "Okay");
+  //   // Notiflix.Report.success("Success", "Done", "Okay");
+  //   Notiflix.Report.failure("An error occurred", "Error", "Okay");
 
-    axios({
-      method: "post",
-      url: process.env.REACT_APP_CONTACT_API,
-      data: fData,
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    })
-      .then(function (response) {
-        document.getElementById("submitBtn").disabled = false;
-        document.getElementById("submitBtn").innerHTML = "send message";
-        clearInput();
-        //handle success
-        Notiflix.Report.success("Success", response.data.message, "Okay");
-      })
-      .catch(function (error) {
-        document.getElementById("submitBtn").disabled = false;
-        document.getElementById("submitBtn").innerHTML = "send message";
-        //handle error
-        const { response } = error;
-        if (response.status === 500) {
-          Notiflix.Report.failure(
-            "An error occurred",
-            response.data.message,
-            "Okay"
-          );
-        }
-        if (response.data.errors !== null) {
-          setErrors(response.data.errors);
-        }
-      });
-  };
+  //   axios({
+  //     method: "post",
+  //     url: process.env.REACT_APP_CONTACT_API,
+  //     data: fData,
+  //     headers: {
+  //       "Content-Type": "multipart/form-data",
+  //     },
+  //   })
+  //     .then(function (response) {
+  //       document.getElementById("submitBtn").disabled = false;
+  //       document.getElementById("submitBtn").innerHTML = "send message";
+  //       clearInput();
+  //       //handle success
+  //       Notiflix.Report.success("Success", response.data.message, "Okay");
+  //     })
+  //     .catch(function (error) {
+  //       document.getElementById("submitBtn").disabled = false;
+  //       document.getElementById("submitBtn").innerHTML = "send message";
+  //       //handle error
+  //       const { response } = error;
+  //       if (response.status === 500) {
+  //         Notiflix.Report.failure(
+  //           "An error occurred",
+  //           response.data.message,
+  //           "Okay"
+  //         );
+  //       }
+  //       if (response.data.errors !== null) {
+  //         setErrors(response.data.errors);
+  //       }
+  //     });
+  // };
+
+  const sendEmail = () => {};
+
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+
+  //   //Your EmailJS template parameters
+  //   const templateParams = {
+  //     firstName: firstName,
+  //     lastName: lastName,
+  //     email: email,
+  //     phone: phone,
+  //     message: message,
+  //   };
+
+  //   // Your EmailJS service ID, template ID, and user ID
+  //   const serviceId = "service_tvinzo";
+  //   const templateId = "template_7tnoipb";
+  //   const userId = "ei4RBOMBhem4YP5k3";
+
+  //   // Send email using EmailJS
+  //   emailjs
+  //     .send(serviceId, templateId, templateParams, userId)
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         navigate("/");
+  //         clearInput();
+  //         toast.success("Email sent successfully");
+  //       } else {
+  //         toast.error("Error sending email");
+  //       }
+  //       // navigate("/");
+  //       // clearInput();
+  //       // toast.success("Email sent successfully");
+  //     })
+  //     .catch((error) => {
+  //       toast.error("Error sending email");
+  //     });
+  // };
+
   return (
     <>
       <div>
@@ -193,11 +239,13 @@ const Contact = () => {
                 </div>
                 <div className="flex flex-col">
                   <h2 className="text-2xl">Office Address</h2>
-                  <p className="text-gray-400">Lahore, Pakistan</p>
+                  <p className="text-gray-400">
+                    Lahore, Pakistan | Dubai, UAE | South Korea
+                  </p>
                 </div>
               </div>
 
-              <div className="flex my-4 w-2/3 lg:w-1/2">
+              <div className="flex w-2/3 lg:w-1/2">
                 <div className="flex flex-col">
                   <i className="fas fa-phone-alt pt-2 pr-2" />
                 </div>
@@ -208,7 +256,7 @@ const Contact = () => {
                     <p className="text-gray-400">+923054490210</p>
                   </a>
 
-                  <div className="mt-5">
+                  <div className="mt-3">
                     <h2 className="text-2xl">Send an E-mail</h2>
                     <a href="mailto:team@tvinz.com">
                       <p className="text-gray-400 hover:text-white">

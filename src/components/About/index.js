@@ -40,7 +40,7 @@ const About = () => {
           >
             <h3 className="text-3xl  text-blue-900 font-bold">
               We develop high-quality revenue-driven websites, innovative mobile
-              apps, and cutting-edge softwares and more
+              apps, cutting-edge software, and more
             </h3>
             <div>
               <p className="my-3 text-xl text-gray-600 font-semibold">
@@ -52,7 +52,7 @@ const About = () => {
             <div>
               <p className="my-3 text-xl text-gray-600 font-semibold">
                 We take responsibility for building custom software solutions
-                that caters for automation of your business processes and
+                that cater to the automation of your business processes and
                 improve efficiency.
               </p>
             </div>

@@ -63,7 +63,7 @@ const Clients = () => {
         >
           <Slider {...settings}>
             {CLIENTS.map((client) => (
-              <Client client={client} />
+              <Client key={client?.id} client={client} />
             ))}
           </Slider>
         </div>

@@ -2,7 +2,7 @@ export const GOALS = [
   {
     title: "Our Mission",
     description:
-      "At Tvinz, our mission is to revolutionize the way people use technology. We're dedicated to creating software products that simplify complex tasks and enhance everyday experiences. With a passion for innovation and a commitment to excellence, we're constantly pushing the boundaries of what's possible. We believe that our success is not just measured in financial terms but also by the positive impact we have on our customers, our employees, and our communities.",
+      "At Tvinz, our mission is to revolutionize the way people use technology. We're dedicated to creating software products that simplify complex tasks and enhance everyday experiences. With a passion for innovation and a commitment to excellence, we're constantly pushing the boundaries of what's possible. We believe that our success is measured in financial terms and by the positive impact we have on our customers, employees, and communities.",
   },
   {
     title: "Our Vision",
@@ -12,6 +12,6 @@ export const GOALS = [
   {
     title: "Our Approach",
     description:
-      "At Tvinz, we're committed to creating innovative software solutions that simplify complex tasks and enhance everyday experiences. Our team of experienced professionals is dedicated to delivering exceptional products and services that make a positive impact on society. Whether you're a business or an individual, we're here to help you achieve your goals and make a difference in the world. Thank you for choosing Tvinz.",
+      "Do you struggle with complex tasks? Tvinz is here to help! We design innovative software solutions that simplify your life.  Our team of experts is passionate about creating exceptional products that make a real difference.  We empower startups, businesses, and individuals to achieve their goals and make a positive impact.  Join us! Choose Tvinz and see the difference.",
   },
 ];

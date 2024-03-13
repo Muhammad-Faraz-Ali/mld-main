@@ -1,4 +1,5 @@
 import React from "react";
+import ShowMoreText from "react-show-more-text";
 
 const Service = ({ img, title, description }) => {
   return (
@@ -10,10 +11,27 @@ const Service = ({ img, title, description }) => {
           src={img}
         />
         <h2 className="font-semibold my-4 text-2xl text-center">{title}</h2>
-        <p
-          className="text-md font-medium"
-          dangerouslySetInnerHTML={{ __html: description }}
-        ></p>
+
+        <ShowMoreText
+          lines={4}
+          more={
+            <span style={{ color: "#1890ff", cursor: "pointer" }}>
+              read more
+            </span>
+          }
+          less={
+            <span style={{ color: "#1890ff", cursor: "pointer" }}>
+              read less
+            </span>
+          }
+          expanded={false}
+          width={290}
+        >
+          <p
+            dangerouslySetInnerHTML={{ __html: description }}
+            style={{ width: "100%" }}
+          ></p>
+        </ShowMoreText>
       </div>
     </div>
   );
