@@ -26,8 +26,7 @@ function App() {
     });
   }, []);
 
-  useDocTitle("Tvinzo");
-
+  useDocTitle("Tvinzo"); //project name changed to tvinzo
   return (
     <Router>
       <ScrollToTop>
