@@ -1,19 +1,15 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
-import axios from "axios";
-import Notiflix from "notiflix";
-//import { SMTPClient } from "emailjs";
 import { useNavigate } from "react-router-dom";
 
 import NavBar from "../components/Navbar";
 import Footer from "../components/Footer";
 import useDocTitle from "../hooks/useDocTitle";
-import MediaIcons from "../components/SocialMedia/MediaIcons";
+import MediaLinks from "../components/SocialMedia";
 
-const Contact = ({ history }) => {
-  useDocTitle("Tvins");
-  console.log("index his", history);
+const Contact = () => {
+  useDocTitle("Tvino");
   const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -21,6 +17,7 @@ const Contact = ({ history }) => {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState([]);
+  const [isSending, setIsSending] = useState(false);
 
   const clearErrors = () => {
     setErrors([]);
@@ -34,91 +31,46 @@ const Contact = ({ history }) => {
     setMessage("");
   };
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
-  //   document.getElementById("submitBtn").disabled = true;
-  //   document.getElementById("submitBtn").innerHTML = "Loading...";
-  //   let fData = new FormData();
-  //   fData.append("first_name", firstName);
-  //   fData.append("last_name", lastName);
-  //   fData.append("email", email);
-  //   fData.append("phone_number", phone);
-  //   fData.append("message", message);
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  //   // Notiflix.Report.success("Success", "Done", "Okay");
-  //   Notiflix.Report.failure("An error occurred", "Error", "Okay");
+    //Your EmailJS template parameters
+    const templateParams = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      phone: phone,
+      message: message,
+    };
 
-  //   axios({
-  //     method: "post",
-  //     url: process.env.REACT_APP_CONTACT_API,
-  //     data: fData,
-  //     headers: {
-  //       "Content-Type": "multipart/form-data",
-  //     },
-  //   })
-  //     .then(function (response) {
-  //       document.getElementById("submitBtn").disabled = false;
-  //       document.getElementById("submitBtn").innerHTML = "send message";
-  //       clearInput();
-  //       //handle success
-  //       Notiflix.Report.success("Success", response.data.message, "Okay");
-  //     })
-  //     .catch(function (error) {
-  //       document.getElementById("submitBtn").disabled = false;
-  //       document.getElementById("submitBtn").innerHTML = "send message";
-  //       //handle error
-  //       const { response } = error;
-  //       if (response.status === 500) {
-  //         Notiflix.Report.failure(
-  //           "An error occurred",
-  //           response.data.message,
-  //           "Okay"
-  //         );
-  //       }
-  //       if (response.data.errors !== null) {
-  //         setErrors(response.data.errors);
-  //       }
-  //     });
-  // };
+    // Your EmailJS service ID, template ID, and user ID
+    const serviceId = "service_tvinzo";
+    const templateId = "template_7tnoipb";
+    const userId = "ei4RBOMBhem4YP5k3";
 
-  const sendEmail = () => {};
+    setIsSending(true);
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
-
-  //   //Your EmailJS template parameters
-  //   const templateParams = {
-  //     firstName: firstName,
-  //     lastName: lastName,
-  //     email: email,
-  //     phone: phone,
-  //     message: message,
-  //   };
-
-  //   // Your EmailJS service ID, template ID, and user ID
-  //   const serviceId = "service_tvinzo";
-  //   const templateId = "template_7tnoipb";
-  //   const userId = "ei4RBOMBhem4YP5k3";
-
-  //   // Send email using EmailJS
-  //   emailjs
-  //     .send(serviceId, templateId, templateParams, userId)
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         navigate("/");
-  //         clearInput();
-  //         toast.success("Email sent successfully");
-  //       } else {
-  //         toast.error("Error sending email");
-  //       }
-  //       // navigate("/");
-  //       // clearInput();
-  //       // toast.success("Email sent successfully");
-  //     })
-  //     .catch((error) => {
-  //       toast.error("Error sending email");
-  //     });
-  // };
+    // Send email using EmailJS
+    emailjs
+      .send(serviceId, templateId, templateParams, userId)
+      .then((response) => {
+        if (response.text === "OK") {
+          navigate("/");
+          clearInput();
+          toast.success(
+            "Thank you for contacting us. Our team will get back to you soon!"
+          );
+        } else {
+          toast.error("Error! while sending email. Try to reach later");
+        }
+      })
+      .catch((error) => {
+        toast.error("Error sending email");
+      })
+      .finally(() => {
+        setIsSending(false);
+      });
+  };
 
   return (
     <>
@@ -223,10 +175,10 @@ const Contact = ({ history }) => {
                 <button
                   type="submit"
                   id="submitBtn"
-                  className="uppercase text-sm font-bold tracking-wide bg-blue-900 hover:bg-blue-800 text-gray-100 p-3 rounded-lg w-full 
+                  className="uppercase text-sm font-bold tracking-wide bg-blue-900 hover:bg-blue-800 text-gray-100 p-3 rounded-full w-full 
                                     focus:outline-none focus:shadow-outline"
                 >
-                  Send Message
+                  {isSending ? "Sending..." : "Send message"}
                 </button>
               </div>
             </div>
@@ -268,7 +220,7 @@ const Contact = ({ history }) => {
               </div>
 
               <div className="flex my-4 w-2/3 lg:w-1/2">
-                <MediaIcons />
+                <MediaLinks />
               </div>
             </div>
           </div>

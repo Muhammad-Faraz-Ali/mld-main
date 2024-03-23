@@ -18,7 +18,7 @@ const CallToAction = () => {
           <div className="w-full lg:w-72 pt-6 lg:mx-12">
             <Link
               to="/contact"
-              className="bg-transparent border hover:bg-blue-900 hover:border-blue-800 text-white justify-center text-center rounded-lg px-10 py-3 flex items-center group"
+              className="bg-transparent border hover:bg-blue-900 hover:border-blue-800 text-white justify-center text-center rounded-full px-10 py-3 flex items-center group"
             >
               Send a message
               <svg

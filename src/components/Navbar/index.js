@@ -29,7 +29,7 @@ const NavBar = () => {
           <HashLink smooth to="/#about">
             <h1 className="font-extrabold font-harrington text-4xl text-blue-900 animate-pulse">
               <span className="text-gradient bg-gradient-to-r from-blue-900 via-blue-900 to-blue-900 shimmer-effect">
-                Tech Cats
+                Tvinzo
               </span>
             </h1>
           </HashLink>

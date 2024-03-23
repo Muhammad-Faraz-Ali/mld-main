@@ -26,7 +26,7 @@ function App() {
     });
   }, []);
 
-  useDocTitle("Tech Cats");
+  useDocTitle("Tvinzo");
 
   return (
     <Router>

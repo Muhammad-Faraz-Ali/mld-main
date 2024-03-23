@@ -6,7 +6,7 @@ import {
   faEnvelopeCircleCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
-import MediaIcons from "../SocialMedia/MediaIcons";
+import MediaLinks from "../SocialMedia";
 import ServicesLinks from "./ServicesLinks";
 import NavLinks from "./NavLinks";
 
@@ -19,7 +19,7 @@ const Footer = () => {
           {/* 1st block */}
           <div className="col-span-12 lg:col-span-4">
             <div className="box-border border-b-4 border-blue-900 p-8 bg-gray-200 text-gray-600 text-center rounded-lg xl:w-80 mx-auto">
-              <h3 className="font-bold text-6xl text-blue-900">Tvinz</h3>
+              <h3 className="font-bold text-6xl text-blue-900">Tvinzo</h3>
               <p className="font-serif mb-2">Tech Partner</p>
               <div className="text-md font-medium text-gray-600">
                 <a
@@ -30,14 +30,14 @@ const Footer = () => {
                   <p>+923054490210</p>
                 </a>
                 <a
-                  href="mailto:team@tvinz.com"
+                  href="mailto:team@tvinzo.com"
                   className="flex justify-center items-center text-blue-500 hover:text-blue-800"
                 >
                   <FontAwesomeIcon
                     icon={faEnvelopeCircleCheck}
                     className="me-50 mr-2"
                   />
-                  <p>team@tvinz.com</p>
+                  <p>team@tvinzo.com</p>
                 </a>
               </div>
             </div>
@@ -57,7 +57,7 @@ const Footer = () => {
               Follow us on social media.
             </div>
             <div className="mx-auto text-center">
-              <MediaIcons />
+              <MediaLinks />
               {/* <ul className="flex justify-center mb-4 md:mb-0">
                 <li className="ml-4">
                   <Link to="https://www.google.com" aria-label="Linkedin">
@@ -100,8 +100,8 @@ const Footer = () => {
             <div className="text-sm text-gray-200 font-semibold py-1">
               Copyright &copy; {new Date().getFullYear()}
               {"  "}
-              <HashLink to="#" className=" hover:text-gray-900">
-                Tvinz
+              <HashLink to="#" className="text-blue-700 hover:text-blue-900">
+                Tvinzo
               </HashLink>
               . All rights reserved.
             </div>

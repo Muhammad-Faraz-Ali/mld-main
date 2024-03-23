@@ -5,7 +5,7 @@ const ContactButton = ({ btnText }) => {
   return (
     <Link
       to="/contact"
-      className="text-white bg-blue-900 hover:bg-blue-800 inline-flex items-center justify-center w-full px-6 py-3 my-4 text-lg shadow-xl rounded-2xl sm:w-auto sm:mb-0"
+      className="text-white bg-blue-900 hover:bg-blue-800 inline-flex items-center justify-center w-full px-6 py-3 my-4 text-lg shadow-xl rounded-full sm:w-auto sm:mb-0"
     >
       {btnText}
       <svg
