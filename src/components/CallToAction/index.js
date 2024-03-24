@@ -6,10 +6,10 @@ const CallToAction = () => {
       <div className="mx-8 w-full h-96 text-center lg:text-left py-16 px-12 flex lg:justify-between items-center">
         <div className="w-full flex flex-col lg:flex-row lg:justify-around">
           <div className="mb-4">
-            <p className="text-2xl md:text-4xl font-bold mb-4">
+            <p className="text-lg  md:text-4xl font-bold mb-4 text-left">
               Are you ready to scale your business?
             </p>
-            <p className="text-lg md:text-2xl">
+            <p className="text-lg md:text-2xl text-left">
               Get in touch and let us build something amazing{" "}
               <span className="font-black">together!</span>
             </p>
@@ -18,7 +18,7 @@ const CallToAction = () => {
           <div className="w-full lg:w-72 pt-6 lg:mx-12">
             <Link
               to="/contact"
-              className="bg-transparent border hover:bg-blue-900 hover:border-blue-800 text-white justify-center text-center rounded-full px-10 py-3 flex items-center group"
+              className="bg-transparent border hover:bg-blue-900 hover:border-blue-800 text-white justify-center text-center rounded-full px-6 py-3 flex items-center group"
             >
               Send a message
               <svg

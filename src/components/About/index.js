@@ -36,25 +36,25 @@ const About = () => {
             data-aos="zoom-in"
             data-aos-delay="500"
           >
-            <h3 className="text-3xl  text-blue-900 font-bold">
+            <h3 className="text-2xl  text-blue-900 font-semibold">
               We develop high-quality revenue-driven websites, innovative mobile
               apps, cutting-edge software, and more
             </h3>
             <div>
-              <p className="my-3 text-xl text-gray-600 font-semibold">
+              <p className="my-3 text-xl text-gray-500 font-semibold text-justify">
                 Our team is well vast in software development and is ready to
                 help develop the applications of your choice.
               </p>
             </div>
 
             <div>
-              <p className="my-3 text-xl text-gray-600 font-semibold">
+              <p className="my-3 text-xl text-gray-500 font-semibold text-justify">
                 We take responsibility for building custom software solutions
                 that cater to the automation of your business processes and
                 improve efficiency.
               </p>
             </div>
-            <ContactButton btnText="Let's Build Your Future Together" />
+            <ContactButton btnText="Let's Connect" />
           </div>
         </div>
       </div>

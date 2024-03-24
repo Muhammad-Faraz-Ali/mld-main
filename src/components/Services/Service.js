@@ -29,7 +29,7 @@ const Service = ({ img, title, description }) => {
         >
           <p
             dangerouslySetInnerHTML={{ __html: description }}
-            style={{ width: "100%" }}
+            style={{ width: "100%", textAlign: "justify" }}
           ></p>
         </ShowMoreText>
       </div>

@@ -70,7 +70,7 @@ const NavBar = () => {
             } `}
           >
             <div className="flex flex-col space-y-6">
-              <NavLinks />
+              <NavLinks handleClick={handleClick} />
             </div>
           </div>
         </div>

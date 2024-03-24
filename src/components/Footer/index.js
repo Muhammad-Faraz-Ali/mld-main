@@ -96,14 +96,15 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-wrap items-center md:justify-between justify-center mx-auto px-4">
-          <div className="w-full md:w-4/12 px-4 mx-auto text-center py-2">
+          <div className="w-full md:w-4/12 px-2 mx-auto text-center py-2">
             <div className="text-sm text-gray-200 font-semibold py-1">
               Copyright &copy; {new Date().getFullYear()}
               {"  "}
-              <HashLink to="#" className="text-blue-700 hover:text-blue-900">
+              <HashLink to="#" className="text-black hover:text-blue-900">
                 Tvinzo
               </HashLink>
-              . All rights reserved.
+              . {"    "}
+              All rights reserved.
             </div>
           </div>
         </div>

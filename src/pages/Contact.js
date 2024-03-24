@@ -210,9 +210,9 @@ const Contact = () => {
 
                   <div className="mt-3">
                     <h2 className="text-2xl">Send an E-mail</h2>
-                    <a href="mailto:team@tvinz.com">
+                    <a href="mailto:team@tvinzo.com">
                       <p className="text-gray-400 hover:text-white">
-                        team@tvinz.com
+                        team@tvinzo.com
                       </p>
                     </a>
                   </div>
