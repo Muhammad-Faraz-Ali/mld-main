@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -71,6 +71,10 @@ const Contact = () => {
         setIsSending(false);
       });
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top when component mounts
+  }, []);
 
   return (
     <>

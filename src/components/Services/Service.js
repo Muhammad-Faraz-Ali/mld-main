@@ -1,7 +1,12 @@
-import React from "react";
-import ShowMoreText from "react-show-more-text";
+import React, { useState } from "react";
 
 const Service = ({ img, title, description }) => {
+  const [expanded, setExpanded] = useState(false);
+
+  const toggleExpanded = () => {
+    setExpanded(!expanded);
+  };
+
   return (
     <div className="bg-white transition-all ease-in-out duration-400  overflow-hidden text-gray-700 hover:bg-gray-500 hover:text-white rounded-lg shadow-2xl p-3 group">
       <div className="m-2 text-justify text-sm">
@@ -12,26 +17,24 @@ const Service = ({ img, title, description }) => {
         />
         <h2 className="font-semibold my-4 text-2xl text-center">{title}</h2>
 
-        <ShowMoreText
-          lines={4}
-          more={
-            <span style={{ color: "#1890ff", cursor: "pointer" }}>
-              read more
-            </span>
-          }
-          less={
-            <span style={{ color: "#1890ff", cursor: "pointer" }}>
-              read less
-            </span>
-          }
-          expanded={false}
-          width={290}
-        >
+        <div style={{ overflow: "hidden" }}>
           <p
             dangerouslySetInnerHTML={{ __html: description }}
-            style={{ width: "100%", textAlign: "justify" }}
+            style={{
+              width: "100%",
+              textAlign: "justify",
+              maxHeight: expanded ? "none" : "100px", // Adjust height here
+              overflow: "hidden",
+            }}
           ></p>
-        </ShowMoreText>
+        </div>
+
+        <button
+          onClick={toggleExpanded}
+          className="text-blue-500 hover:underline"
+        >
+          {expanded ? "read less" : "read more"}
+        </button>
       </div>
     </div>
   );
