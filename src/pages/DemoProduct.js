@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import NavBar from "../components/Navbar";
 import Footer from "../components/Footer";
 import useDocTitle from "../hooks/useDocTitle";
-import axios from "axios";
+// import axios from "axios";
 // import emailjs from 'emailjs-com';
-import Notiflix from "notiflix";
+// import Notiflix from "notiflix";
 
 const DemoProduct = (props) => {
   useDocTitle("MLD | Molad e Konsult - Demo our products");
@@ -31,13 +31,13 @@ const DemoProduct = (props) => {
     setErrors([]);
   };
 
-  const clearInput = () => {
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setPhone("");
-    setMessage("");
-  };
+  // const clearInput = () => {
+  //   setFirstName("");
+  //   setLastName("");
+  //   setEmail("");
+  //   setPhone("");
+  //   setMessage("");
+  // };
 
   function sendEmail(e) {
     e.preventDefault();

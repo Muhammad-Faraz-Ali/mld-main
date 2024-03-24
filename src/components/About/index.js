@@ -1,8 +1,6 @@
 import React from "react";
-import img from "../../assets/images/Web-developer.svg";
 import about from "../../assets/images/about/about-2.jpg";
 // import Portfolio from "./Portfolio";
-import home from "../../assets/images/clients/home.jpeg";
 import ContactButton from "../Contact/ContactButton";
 import Goals from "./Goals";
 

@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // All pages
 import HomePage from "./pages/Home";
 import Contact from "./pages/Contact";
-import DemoProduct from "./pages/DemoProduct";
+// import DemoProduct from "./pages/DemoProduct";
 
 import ScrollToTop from "./components/ScrollToTop";
 import useDocTitle from "./hooks/useDocTitle";
