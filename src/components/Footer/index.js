@@ -100,7 +100,7 @@ const Footer = () => {
             <div className="text-sm text-gray-200 font-semibold py-1">
               Copyright &copy; {new Date().getFullYear()}
               {"  "}
-              <HashLink to="#" className="text-black hover:text-blue-900">
+              <HashLink to="/#" className="text-black hover:text-blue-900">
                 Tvinzo
               </HashLink>
               . {"    "}

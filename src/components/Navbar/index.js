@@ -65,11 +65,13 @@ const NavBar = () => {
           </div>
 
           <div
-            className={`fixed transition-transform duration-300 ease-in-out transit flex justify-center left-0 w-full h-auto rounded-md p-24 bg-white lg:hidden shadow-xl top-14 ${
-              isOpen ? "block" : "hidden"
-            } `}
+            className={`fixed transition-all duration-300 ease-in-out flex justify-center left-0 w-full h-auto rounded-md px-24 pb-8 bg-white lg:hidden shadow-xl top-14 ${
+              isOpen
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-full"
+            }`}
           >
-            <div className="flex flex-col space-y-6">
+            <div className="flex flex-col space-y-4">
               <NavLinks handleClick={handleClick} />
             </div>
           </div>
